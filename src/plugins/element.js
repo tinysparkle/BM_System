@@ -27,13 +27,16 @@ import {
   Tooltip,
   Pagination,
   Dialog,
-  MessageBox 
+  MessageBox ,
+  Tag,
+  Tree,
 } from 'element-ui'
 
 Vue.prototype.$message = Message
 // MessageBox 不需要全局挂载
 Vue.prototype.$confirm = MessageBox.confirm
-
+Vue.use(Tree)
+Vue.use(Tag)
 Vue.use(Tooltip)
 Vue.use(Pagination)
 Vue.use(Dialog)
