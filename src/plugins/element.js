@@ -30,11 +30,13 @@ import {
   MessageBox ,
   Tag,
   Tree,
+  Cascader
 } from 'element-ui'
 
 Vue.prototype.$message = Message
 // MessageBox 不需要全局挂载
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.use(Cascader)
 Vue.use(Tree)
 Vue.use(Tag)
 Vue.use(Tooltip)
