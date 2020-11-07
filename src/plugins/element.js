@@ -33,12 +33,22 @@ import {
   Cascader,
   Alert,
   TabPane,
-  Tabs
+  Tabs,
+  Steps,
+  Step,
+  Checkbox,
+  CheckboxGroup,
+  Upload
 } from 'element-ui'
 
 Vue.prototype.$message = Message
 // MessageBox 不需要全局挂载
 Vue.prototype.$confirm = MessageBox.confirm
+Vue.use(Upload)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Steps)
+Vue.use(Step)
 Vue.use(TabPane)
 Vue.use(Tabs)
 Vue.use(Alert)
