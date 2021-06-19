@@ -17,11 +17,21 @@ import axios from 'axios'
 // axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 // 已经失效
 // axios.defaults.baseURL = 'http://47.115.124.102:8888/api/private/v1/'
-axios.defaults.baseURL = 'http://119.23.53.78:8888/api/private/v1/'
+axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/'
 
+// 导入NProgress包及对应的css样式
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 // 请求拦截器
 axios.interceptors.request.use(config => {
+  // 请求时调用
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config;
+})
+axios.interceptors.response.use(config => {
+  // 请求完成后调用
+  NProgress.done()
   return config;
 })
 Vue.prototype.$http = axios
